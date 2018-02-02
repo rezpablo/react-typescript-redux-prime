@@ -1,4 +1,3 @@
-
 import * as React from 'react';
 import './App.css';
 import { Button } from 'primereact/components/button/Button';
@@ -10,7 +9,7 @@ interface AppState {
     count: number;
 }
 
-class App extends React.Component<AppProps, AppState> {
+class Home extends React.Component<AppProps, AppState> {
     
     constructor(props: AppProps) {
         super(props);
@@ -40,4 +39,4 @@ class App extends React.Component<AppProps, AppState> {
     }
 }
 
-export default App;
+export default Home;

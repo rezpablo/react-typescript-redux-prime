@@ -1,12 +1,17 @@
-import { Switch, Route } from 'react-router-dom'
+import * as React from 'react';
 
-const Main = () => (
+import { Switch, Route } from 'react-router-dom'
+import Home from "./Home";
+import Profile from "./Profile";
+
+const Router = () => (
     <main>
         <Switch>
             <Route exact path='/' component={Home}/>
-            <Route path='/roster' component={Roster}/>
-            <Route path='/schedule' component={Schedule}/>
+            <Route path='/home' component={Home}/>
+            <Route path='/profile' component={Profile}/>
         </Switch>
     </main>
+);
 
-export default App;
+export default Router;
