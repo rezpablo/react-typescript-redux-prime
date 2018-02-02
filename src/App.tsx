@@ -1,10 +1,10 @@
 import * as React from 'react';
 import Router from "./Router";
-import Header from "./Header";
+import Menu from "./main/template/Menu";
 
 const   App = () => (
     <div>
-        <Header/>
+        <Menu/>
         <Router />
     </div>
 );

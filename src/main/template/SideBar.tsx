@@ -3,8 +3,8 @@ import {Sidebar} from 'primereact/components/sidebar/Sidebar';
 import {Button} from "primereact/components/button/Button";
 import './Sidebar.css';
 
-interface HeaderProps {}
-interface HeaderState {
+interface SideBarProps {}
+interface SideBarStateState {
     visibleLeft: boolean,
     visibleRight: boolean,
     visibleTop:boolean,
@@ -12,9 +12,9 @@ interface HeaderState {
     visibleFullScreen:boolean
 }
 
-class Header extends React.Component<HeaderProps, HeaderState>  {
+class SideBar extends React.Component<SideBarProps, SideBarStateState>  {
 
-    constructor(props: HeaderProps) {
+    constructor(props: SideBarProps) {
         super(props);
         this.state = {
             visibleLeft: false,
@@ -24,7 +24,6 @@ class Header extends React.Component<HeaderProps, HeaderState>  {
             visibleFullScreen:false
         };
     }
-
 
     render() {
         return (
@@ -39,8 +38,8 @@ class Header extends React.Component<HeaderProps, HeaderState>  {
                 </a>
 
             </div>
-    );
+        );
     }
 }
 
-export default Header;
+export default SideBar;
