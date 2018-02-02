@@ -1,0 +1,32 @@
+.ui-menu{
+    z-index: 1001006;
+}
+
+.float{
+    position:fixed;
+    width:30px;
+    height:30px;
+    background-color:#2399e5;
+    color:#FFF;
+    text-align:center;
+}
+
+.my-float{
+    margin-top:6px;
+}
+
+.ui-sidebar .ui-sidebar-close {
+    padding-top: 28% !important;
+}
+
+.sidebar-content {
+    padding-top: 30% !important;
+}
+
+.ui-sidebar-left {
+    width: 12em !important;
+}
+
+.ui-menubar .ui-menuitem.ui-menuitem-custom {
+    float: left !important;
+}

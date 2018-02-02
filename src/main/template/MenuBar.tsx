@@ -1,13 +1,17 @@
 import * as React from 'react';
-import './Sidebar.css';
 import {Menubar} from 'primereact/components/menubar/Menubar';
-import {InputText} from "primereact/components/inputtext/InputText";
-import {Button} from "primereact/components/button/Button";
+import {Button} from 'primereact/components/button/Button';
+import {Sidebar} from 'primereact/components/sidebar/Sidebar';
 
+import './MenuBar.css';
 
 interface MenuBarProps {}
 interface MenuBarStateState {
-    items: any
+    visibleLeft: boolean;
+    visibleRight: boolean;
+    visibleTop: boolean;
+    visibleBottom: boolean;
+    visibleFullScreen: boolean;
 }
 
 class MenuBar extends React.Component<MenuBarProps, MenuBarStateState>  {
@@ -15,89 +19,31 @@ class MenuBar extends React.Component<MenuBarProps, MenuBarStateState>  {
     constructor(props: MenuBarProps) {
         super(props);
         this.state = {
-            items: [ {
-                label: 'File',
-                icon: 'fa-file-o',
-                items: [{
-                    label: 'New',
-                    icon: 'fa-plus',
-                    items: [
-                        {label: 'Project'},
-                        {label: 'Other'},
-                    ]
-                },
-                    {label: 'Open'},
-                    {separator:true},
-                    {label: 'Quit'}
-                ]
-            },
-                {
-                    label: 'Edit',
-                    icon: 'fa-edit',
-                    items: [
-                        {label: 'Undo', icon: 'fa-mail-forward'},
-                        {label: 'Redo', icon: 'fa-mail-reply'}
-                    ]
-                },
-                {
-                    label: 'Help',
-                    icon: 'fa-question',
-                    items: [
-                        {
-                            label: 'Contents'
-                        },
-                        {
-                            label: 'Search',
-                            icon: 'fa-search',
-                            items: [
-                                {
-                                    label: 'Text',
-                                    items: [
-                                        {
-                                            label: 'Workspace'
-                                        }
-                                    ]
-                                },
-                                {
-                                    label: 'File'
-                                }
-                            ]}
-                    ]
-                },
-                {
-                    label: 'Actions',
-                    icon: 'fa-gear',
-                    items: [
-                        {
-                            label: 'Edit',
-                            icon: 'fa-refresh',
-                            items: [
-                                {label: 'Save', icon: 'fa-save'},
-                                {label: 'Update', icon: 'fa-save'},
-                            ]
-                        },
-                        {
-                            label: 'Other',
-                            icon: 'fa-phone',
-                            items: [
-                                {label: 'Delete', icon: 'fa-minus'}
-                            ]
-                        }
-                    ]
-                },
-                {
-                    label: 'Quit', icon: 'fa-minus'
-                }]
+            visibleLeft: false,
+            visibleRight: false,
+            visibleTop: false,
+            visibleBottom: false,
+            visibleFullScreen: false,
         };
     }
 
-
     render() {
         return (
-            <Menubar model={this.state.items}>
-                <InputText placeholder="Search" type="text"/>
-                <Button label="Logout" icon="fa-sign-out" style={{marginLeft:4}}/>
-            </Menubar>
+            <div>
+                <Sidebar visible={this.state.visibleLeft} baseZIndex={1000000} onHide={() => this.setState({visibleLeft: false})}>
+                    <div className="sidebar-content">
+                        <Button type="button" onClick={() => this.setState({visibleLeft: true})} label="Save" className="ui-button-success"/>
+                        <Button type="button" onClick={() => this.setState({visibleLeft: true})} label="Cancel" className="ui-button-secondary"/>
+                    </div>
+                </Sidebar>
+
+
+                <div className="content-section implementation">
+                    <Menubar>
+                        <Button onClick={() => this.setState({visibleLeft: !this.state.visibleLeft})} icon="fa-bars"/>
+                    </Menubar>
+                </div>
+            </div>
     );
     }
 }
