@@ -4,6 +4,7 @@ import {Button} from 'primereact/components/button/Button';
 import {Sidebar} from 'primereact/components/sidebar/Sidebar';
 
 import './MenuBar.css';
+import {Link} from 'react-router-dom';
 
 interface MenuBarProps {}
 interface MenuBarStateState {
@@ -32,8 +33,20 @@ class MenuBar extends React.Component<MenuBarProps, MenuBarStateState>  {
             <div>
                 <Sidebar visible={this.state.visibleLeft} baseZIndex={1000000} onHide={() => this.setState({visibleLeft: false})}>
                     <div className="sidebar-content">
-                        <Button type="button" onClick={() => this.setState({visibleLeft: true})} label="Save" className="ui-button-success"/>
-                        <Button type="button" onClick={() => this.setState({visibleLeft: true})} label="Cancel" className="ui-button-secondary"/>
+                        <ul className="sidebar-ul">
+                            <li className="sidebar-li">
+                                <Link className="sidebar-a" to="/" onClick={() => this.setState({visibleLeft: !this.state.visibleLeft})}>
+                                    <i className="fa fa-fw fa-home" />
+                                    <span>Home</span>
+                                </Link>
+                            </li>
+                            <li className="sidebar-li">
+                                <Link className="sidebar-a" to="/people" onClick={() => this.setState({visibleLeft: !this.state.visibleLeft})}>
+                                    <i className="fa fa-fw fa-user" />
+                                    <span>People</span>
+                                </Link>
+                            </li>
+                        </ul>
                     </div>
                 </Sidebar>
 

@@ -20,7 +20,7 @@
 }
 
 .sidebar-content {
-    padding-top: 235px !important;
+    padding-top: 30% !important;
 }
 
 .ui-sidebar-left {
@@ -30,3 +30,41 @@
 .ui-menubar .ui-menuitem.ui-menuitem-custom {
     float: left !important;
 }
+
+.sidebar-ul {
+    margin-top: 16px;
+    padding-bottom: 120px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+    display: block;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+}
+
+.sidebar-li {
+    box-sizing: border-box;
+}
+
+.sidebar-a {
+    cursor: pointer;
+    display: block;
+    padding: 10px 5px;
+    color: #292B2C;
+    width: 100%;
+    transition: background-color 0.3s, border-left-color 0.3s;
+    overflow: hidden;
+    border-left: 4px solid transparent;
+    text-decoration: none;
+}
+
+li a i:first-child {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+    font-size: 16px;
+}
+
