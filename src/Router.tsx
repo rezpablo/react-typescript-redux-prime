@@ -5,7 +5,7 @@ import Home from './Home';
 import PersonView from './person/PersonView';
 
 const Router = () => (
-    <main>
+    <main className="layout-main">
         <Switch>
             <Route exact path="/" component={Home}/>
             <Route path="/home" component={Home}/>

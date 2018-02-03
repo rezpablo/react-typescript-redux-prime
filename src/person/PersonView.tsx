@@ -2,8 +2,9 @@ import {Dispatch} from 'redux';
 import {connect} from 'react-redux';
 import * as React from 'react';
 
-import {model} from './index'
-import PersonItem from "./components/PersonItem";
+import {model} from './index';
+import PersonItem from './components/PersonItem';
+import {Card} from 'primereact/components/card/Card';
 
 interface PersonViewProps {
     person: model.Person[];
@@ -16,16 +17,18 @@ class PersonView extends React.Component<PersonViewProps> {
         const { person } = this.props;
 
         return (
-            <div>
-                <h1>
-                    People
-                </h1>
-                <ul>
-                    {person.map(p =>
-                        <PersonItem person={p}/>
-                    )}
-                </ul>
-            </div>
+            <Card>
+                <div>
+                    <h1>
+                        People
+                    </h1>
+                    <ul>
+                        {person.map(p =>
+                            <PersonItem person={p} key={p.id}/>
+                        )}
+                    </ul>
+                </div>
+            </Card>
         );
     };
 }
