@@ -4,9 +4,9 @@ import {Person} from './model';
 
 import {ADD_PERSON} from './constants/ActionTypes';
 
-const addPerson = createAction<Person, string>(
+const addPerson = createAction<Person, string, string>(
     ADD_PERSON,
-  (name: string) => ({ name })
+  (name: string, surname: string) => ({ name, surname })
 );
 
 export {
