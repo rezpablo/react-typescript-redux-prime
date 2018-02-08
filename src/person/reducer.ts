@@ -17,4 +17,5 @@ export default handleActions<IState, Person>({
       surname: 'Doe'
     }, ...state];
   },
+
 }, initialState);
